@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Journal.
+    -->
+    <changeSet id="20161211154750-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="auto_id"
+                                 baseTableName="journal"
+                                 constraintName="fk_journal_auto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="auto"/>
+
+        <addForeignKeyConstraint baseColumnNames="routes_id"
+                                 baseTableName="journal"
+                                 constraintName="fk_journal_routes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="routes"/>
+
+    </changeSet>
+</databaseChangeLog>

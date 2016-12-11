@@ -1,0 +1,30 @@
+<div>
+    <h2>Top On Routes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <!--<th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="routeName"><span>Route Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="countOnRoute"><span>Count On Route</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="topOnRoutes in vm.topOnRoutes track by topOnRoutes.id">
+                    <!--<td><a ui-sref="top-on-routes-detail({id:topOnRoutes.id})">{{topOnRoutes.id}}</a></td>-->
+                    <td>{{topOnRoutes.routeName}}</td>
+                    <td>{{topOnRoutes.countOnRoute}}</td>
+                    <td class="text-right">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

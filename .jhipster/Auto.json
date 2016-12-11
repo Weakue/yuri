@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "autoPersonell",
+            "otherEntityName": "autoPersonell",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "lastName",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "auto"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "num",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mark",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161211154354",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "auto",
+    "pagination": "infinite-scroll"
+}

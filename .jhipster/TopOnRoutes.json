@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "routeName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countOnRoute",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161211160126",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "top_on_routes",
+    "pagination": "infinite-scroll"
+}

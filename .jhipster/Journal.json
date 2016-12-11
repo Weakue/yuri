@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "auto",
+            "otherEntityName": "auto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "num"
+        },
+        {
+            "relationshipName": "routes",
+            "otherEntityName": "routes",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "timeOut",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "timeIn",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20161211154750",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "journal",
+    "pagination": "infinite-scroll"
+}

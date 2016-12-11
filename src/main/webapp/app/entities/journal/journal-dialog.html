@@ -1,0 +1,58 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myJournalLabel">Create or edit a Journal</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.journal.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.journal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_timeOut">Time Out</label>
+                <div class="input-group">
+                    <input id="field_timeOut" type="text" class="form-control" name="timeOut" uib-datepicker-popup="{{dateformat}}" ng-model="vm.journal.timeOut" is-open="vm.datePickerOpenStatus.timeOut"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('timeOut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_timeIn">Time In</label>
+                <div class="input-group">
+                    <input id="field_timeIn" type="text" class="form-control" name="timeIn" uib-datepicker-popup="{{dateformat}}" ng-model="vm.journal.timeIn" is-open="vm.datePickerOpenStatus.timeIn"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('timeIn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_auto">Auto</label>
+            <select class="form-control" id="field_auto" name="auto" ng-model="vm.journal.auto" ng-options="auto as auto.num for auto in vm.autos track by auto.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_routes">Routes</label>
+            <select class="form-control" id="field_routes" name="routes" ng-model="vm.journal.routes" ng-options="routes as routes.name for routes in vm.routes track by routes.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

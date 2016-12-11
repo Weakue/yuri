@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "journal",
+            "otherEntityName": "journal",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "routes"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161211154432",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "routes",
+    "pagination": "infinite-scroll"
+}

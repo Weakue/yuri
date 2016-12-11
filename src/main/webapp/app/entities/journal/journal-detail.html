@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Journal</span> {{vm.journal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Time Out</span></dt>
+        <dd>
+            <span>{{vm.journal.timeOut | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Time In</span></dt>
+        <dd>
+            <span>{{vm.journal.timeIn | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Auto</span></dt>
+        <dd>
+            <a ui-sref="auto-detail({id:vm.journal.auto.id})">{{vm.journal.auto.num}}</a>
+        </dd>
+        <dt><span>Routes</span></dt>
+        <dd>
+            <a ui-sref="routes-detail({id:vm.journal.routes.id})">{{vm.journal.routes.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="journal-detail.edit({id:vm.journal.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
